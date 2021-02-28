@@ -68,7 +68,6 @@
         height: 36px;
     }
     .buttonCorrelaciones{
-        width: 100%;
         padding-left: 25px;
         padding-right: 25px;
     }
@@ -83,6 +82,7 @@
         outline: none;
     }
 
+
     .listaInicial{
         display: block;
         margin: auto;
@@ -96,15 +96,14 @@
     .botonAppend {
         display: none;
         border: 3px solid #337ab7;
-        height: 500px;
+        max-height: 635px;
         margin: auto;
         border-radius: 5px;
     }
     
     .prediction {
-        position: relative;
-        top: 70px;
-    }
+        padding-top: 10%;
+}
 
     .predictionText {
         text-align: center;
@@ -116,6 +115,9 @@
         background: #337ab7;
         color: lightgray;
         text-align: center;
+        position: fixed;
+        bottom: 0px;
+        width: 60%;
     }
     .risk-info{
         font-style: italic;
@@ -154,15 +156,32 @@
         font-size: 14px;
     }
     
-    .fundamentals-img{
+    .ad-inf-img{
         width: 80%;
         display: block;
         margin: auto;
         margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .fundaments-img{
+        width: 100%;
+        display: block;
+        margin: auto;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .correlations-img{
+        width: 100%;
+        display: block;
+        margin: auto;
+        margin-top: 30px;
+        margin-bottom: 30px;
     }
 
     @media screen and (min-width:920px) and (max-width:1291px){
-        .buttonGenerico {
+        .buttonGenerico, .buttonCorrelaciones {
             width: 220px;
         }
     }
@@ -173,5 +192,9 @@
         }
         .correlations{
             flex-direction: column;
+        }
+
+        .footer{
+            width:100%;
         }
     }

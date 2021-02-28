@@ -1,9 +1,11 @@
-const boton = document.querySelectorAll('.buttonGenerico')
+const boton = document.querySelectorAll('.buttonGenerico, .buttonCorrelaciones')
+
+
 const div = document.querySelectorAll('.botonAppend')
 
 const taLabels = Array.from(document.querySelectorAll('.taLabel'));
 
-console.log(taLabels);
+console.log(boton);
 
 
 taLabels.forEach(item => chooseColor(item));
@@ -27,8 +29,8 @@ for( let i = 0; i <= boton.length; i++) {
         botonInterno.style.display = 'block'
     })
 
-    // botonInterno.addEventListener('blur', () => {
-    //     div[i].style.display = 'none'
-    //     botonInterno.style.marginLeft = '0%'
-    // })
+      botonInterno.addEventListener('blur', () => {
+          div[i].style.display = 'none'
+          botonInterno.style.marginLeft = '0%'
+      })
 }
