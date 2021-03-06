@@ -1,9 +1,8 @@
 "use strict";
 
-var boton = document.querySelectorAll('.buttonGenerico');
+var boton = document.querySelectorAll('.buttonGenerico, .buttonCorrelaciones');
 var div = document.querySelectorAll('.botonAppend');
 var taLabels = Array.from(document.querySelectorAll('.taLabel'));
-console.log(taLabels);
 taLabels.forEach(function (item) {
   return chooseColor(item);
 });
@@ -17,6 +16,23 @@ function chooseColor(i) {
     i.style.color = 'green';
   }
 }
+/*
+// token name added to aditional analysis
+const tokenNames = document.querySelectorAll('.tokenName');
+const spanTokenNames = document.querySelectorAll('.spanTokenName');
+tokenNames.forEach(item => addName(item));
+
+function addName(tokenName){
+    // for(let i=0; i<=tokenNames.length;i++){
+    //     console.log(i.textContent);
+        for(let j=0 ; j<= spanTokenNames.length; j++){
+            j.innerText = tokenName.textContent;
+            console.log(j);
+        }
+    // }
+
+}*/
+
 
 var _loop = function _loop(i) {
   var botonInterno = boton[i];
@@ -24,10 +40,11 @@ var _loop = function _loop(i) {
     div[i].style.display = 'block';
     botonInterno.style.margin = 'auto';
     botonInterno.style.display = 'block';
-  }); // botonInterno.addEventListener('blur', () => {
-  //     div[i].style.display = 'none'
-  //     botonInterno.style.marginLeft = '0%'
-  // })
+  });
+  botonInterno.addEventListener('blur', function () {
+    div[i].style.display = 'none';
+    botonInterno.style.marginLeft = '0%';
+  });
 };
 
 for (var i = 0; i <= boton.length; i++) {
