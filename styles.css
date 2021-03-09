@@ -96,7 +96,7 @@
     .botonAppend {
         display: none;
         border: 3px solid #337ab7;
-        max-height: 635px;
+        /* max-height: 635px; */
         margin: auto;
         border-radius: 5px;
     }
@@ -126,24 +126,29 @@
     }
 
     .technical-img {
-        width: 50%;
+        width: 90%;
+        display: block;
+        margin: auto;
     }
-    .taGraph{
-        margin-left: 2%;
+
+    .taLabel{
+        margin-left: 30px;
     }
     .taDefinitions{
         position: relative;
-        bottom: 130px;
+        /* bottom: 130px; */
         margin: 10px;
         font-size: 15px;
         text-align: left;
     }
 
     .taLegend{
-        width: 36%;
-        margin-left: 62%;
-        bottom: 158px;
+        /* width: 36%; */
+        /* margin-left: 62%; */
+        /* bottom: 158px; */
         position: relative;
+        margin-top: 20px;
+        margin-left: 10px;
     }
     .taLegend h4{
         text-align: left;
@@ -172,6 +177,12 @@
         margin-bottom: 30px;
     }
 
+    .paragraph-ia{
+        text-align: left;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
     .correlations-img{
         width: 100%;
         display: block;
@@ -180,13 +191,18 @@
         margin-bottom: 30px;
     }
 
+    .ordenTA{
+        display: grid;
+        grid-template-columns: 50% 2fr;
+    }
+
     @media screen and (min-width:920px) and (max-width:1291px){
         .buttonGenerico, .buttonCorrelaciones {
             width: 220px;
         }
     }
 
-    @media screen and (max-width:600px){
+    @media screen and (max-width:583px){
         body{
             width: 100%;
         }
@@ -198,3 +214,8 @@
             width:100%;
         }
     }
+    @media screen and (max-width:882px){
+        .ordenTA{
+            display: block;
+        }
+    }    

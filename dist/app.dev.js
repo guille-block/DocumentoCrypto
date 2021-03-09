@@ -1,6 +1,8 @@
 "use strict";
 
+// import {apikey} from "../DocumentoCrypto/apikey.js";
 var boton = document.querySelectorAll('.buttonGenerico, .buttonCorrelaciones');
+var liBox = document.querySelectorAll('.box');
 var div = document.querySelectorAll('.botonAppend');
 var taLabels = Array.from(document.querySelectorAll('.taLabel'));
 taLabels.forEach(function (item) {
@@ -16,23 +18,6 @@ function chooseColor(i) {
     i.style.color = 'green';
   }
 }
-/*
-// token name added to aditional analysis
-const tokenNames = document.querySelectorAll('.tokenName');
-const spanTokenNames = document.querySelectorAll('.spanTokenName');
-tokenNames.forEach(item => addName(item));
-
-function addName(tokenName){
-    // for(let i=0; i<=tokenNames.length;i++){
-    //     console.log(i.textContent);
-        for(let j=0 ; j<= spanTokenNames.length; j++){
-            j.innerText = tokenName.textContent;
-            console.log(j);
-        }
-    // }
-
-}*/
-
 
 var _loop = function _loop(i) {
   var botonInterno = boton[i];
@@ -40,13 +25,22 @@ var _loop = function _loop(i) {
     div[i].style.display = 'block';
     botonInterno.style.margin = 'auto';
     botonInterno.style.display = 'block';
-  });
-  botonInterno.addEventListener('blur', function () {
-    div[i].style.display = 'none';
-    botonInterno.style.marginLeft = '0%';
-  });
+    liBox[i].style.width = '100%';
+  }); // botonInterno.addEventListener('blur', () => {
+  //       div[i].style.display = 'none'
+  //       botonInterno.style.marginLeft = '0%'
+  //       liBox[i].style.width = 'auto';
+  //   })
 };
 
-for (var i = 0; i <= boton.length; i++) {
+for (var i = 0; i < boton.length; i++) {
   _loop(i);
+} // token name added to aditional analysis
+
+
+var tokenNames = document.querySelectorAll('.tokenName');
+var spanTokenNames = document.querySelectorAll('.spanTokenName');
+
+for (var _i = 0; _i < tokenNames.length; _i++) {
+  spanTokenNames[_i].innerText = tokenNames[_i].textContent;
 }
