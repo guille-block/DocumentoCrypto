@@ -30,11 +30,11 @@ for( let i = 0; i < boton.length; i++) {
         liBox[i].style.width ='100%';
     })
 
-    // botonInterno.addEventListener('blur', () => {
-    //       div[i].style.display = 'none'
-    //       botonInterno.style.marginLeft = '0%'
-    //       liBox[i].style.width = 'auto';
-    //   })
+     botonInterno.addEventListener('blur', () => {
+           div[i].style.display = 'none'
+           botonInterno.style.marginLeft = '0%'
+           liBox[i].style.width = 'auto';
+       })
 }
 
 // token name added to aditional analysis
