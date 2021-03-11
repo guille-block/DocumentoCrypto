@@ -26,11 +26,12 @@ var _loop = function _loop(i) {
     botonInterno.style.margin = 'auto';
     botonInterno.style.display = 'block';
     liBox[i].style.width = '100%';
-  }); // botonInterno.addEventListener('blur', () => {
-  //       div[i].style.display = 'none'
-  //       botonInterno.style.marginLeft = '0%'
-  //       liBox[i].style.width = 'auto';
-  //   })
+  });
+  botonInterno.addEventListener('blur', function () {
+    div[i].style.display = 'none';
+    botonInterno.style.marginLeft = '0%';
+    liBox[i].style.width = 'auto';
+  });
 };
 
 for (var i = 0; i < boton.length; i++) {

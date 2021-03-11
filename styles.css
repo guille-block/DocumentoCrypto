@@ -196,6 +196,11 @@
         grid-template-columns: 50% 2fr;
     }
 
+    .longshot-descr{
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
     @media screen and (min-width:920px) and (max-width:1291px){
         .buttonGenerico, .buttonCorrelaciones {
             width: 220px;
