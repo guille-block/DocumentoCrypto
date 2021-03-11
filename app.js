@@ -29,7 +29,7 @@ function addListenerMulti(element, eventNames, listener) {
   }
   
   
-  for( let i = 0; i < boton.length; i++) {
+for( let i = 0; i < boton.length; i++) {
       let botonInterno = boton[i]
       addListenerMulti(botonInterno, 'focus click', function(){
           div[i].style.display = 'block'
@@ -40,7 +40,7 @@ function addListenerMulti(element, eventNames, listener) {
       });
     // botonInterno.addEventListener('focus', ()=> {
     // })
-    addListenerMulti(botonInterno, 'blur touchcancel touchleave', function(){
+    addListenerMulti(botonInterno, 'blur mouseout touchleave', function(){
         div[i].style.display = 'none'
         botonInterno.style.marginLeft = '0%'
         liBox[i].style.width = 'auto';

@@ -37,7 +37,7 @@ var _loop = function _loop(i) {
   }); // botonInterno.addEventListener('focus', ()=> {
   // })
 
-  addListenerMulti(botonInterno, 'blur touchcancel touchleave', function () {
+  addListenerMulti(botonInterno, 'blur mouseout touchleave', function () {
     div[i].style.display = 'none';
     botonInterno.style.marginLeft = '0%';
     liBox[i].style.width = 'auto';
