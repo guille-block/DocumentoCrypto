@@ -19,19 +19,30 @@ function chooseColor(i) {
   }
 }
 
+function addListenerMulti(element, eventNames, listener) {
+  var events = eventNames.split(' ');
+
+  for (var i = 0, iLen = events.length; i < iLen; i++) {
+    element.addEventListener(events[i], listener, false);
+  }
+}
+
 var _loop = function _loop(i) {
   var botonInterno = boton[i];
-  botonInterno.addEventListener('focus', function () {
+  addListenerMulti(botonInterno, 'focus click', function () {
     div[i].style.display = 'block';
     botonInterno.style.margin = 'auto';
     botonInterno.style.display = 'block';
     liBox[i].style.width = '100%';
-  });
-  botonInterno.addEventListener('blur', function () {
+  }); // botonInterno.addEventListener('focus', ()=> {
+  // })
+
+  addListenerMulti(botonInterno, 'blur touchcancel touchleave', function () {
     div[i].style.display = 'none';
     botonInterno.style.marginLeft = '0%';
     liBox[i].style.width = 'auto';
-  });
+  }); //  botonInterno.addEventListener('blur touchcancel touchleave', () => {
+  //    })
 };
 
 for (var i = 0; i < boton.length; i++) {

@@ -21,20 +21,33 @@ function chooseColor(i){
     }
 }
 
-for( let i = 0; i < boton.length; i++) {
-    let botonInterno = boton[i]
-    botonInterno.addEventListener('click', ()=> {
-        div[i].style.display = 'block'
-        botonInterno.style.margin = 'auto'
-        botonInterno.style.display = 'block'
-        liBox[i].style.width ='100%';
-    })
+function addListenerMulti(element, eventNames, listener) {
+    var events = eventNames.split(' ');
+    for (var i=0, iLen=events.length; i<iLen; i++) {
+      element.addEventListener(events[i], listener, false);
+    }
+  }
+  
+  
+  for( let i = 0; i < boton.length; i++) {
+      let botonInterno = boton[i]
+      addListenerMulti(botonInterno, 'focus click', function(){
+          div[i].style.display = 'block'
+          botonInterno.style.margin = 'auto'
+          botonInterno.style.display = 'block'
+          liBox[i].style.width ='100%';
 
-     botonInterno.addEventListener('blur', () => {
-           div[i].style.display = 'none'
-           botonInterno.style.marginLeft = '0%'
-           liBox[i].style.width = 'auto';
-       })
+      });
+    // botonInterno.addEventListener('focus', ()=> {
+    // })
+    addListenerMulti(botonInterno, 'blur touchcancel touchleave', function(){
+        div[i].style.display = 'none'
+        botonInterno.style.marginLeft = '0%'
+        liBox[i].style.width = 'auto';
+    
+    });
+    //  botonInterno.addEventListener('blur touchcancel touchleave', () => {
+    //    })
 }
 
 // token name added to aditional analysis
