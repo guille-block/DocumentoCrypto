@@ -23,7 +23,7 @@ function chooseColor(i){
 
 for( let i = 0; i < boton.length; i++) {
     let botonInterno = boton[i]
-    botonInterno.addEventListener('focus', ()=> {
+    botonInterno.addEventListener('click', ()=> {
         div[i].style.display = 'block'
         botonInterno.style.margin = 'auto'
         botonInterno.style.display = 'block'
